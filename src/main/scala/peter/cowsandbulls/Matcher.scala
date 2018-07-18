@@ -25,13 +25,5 @@ object Matcher {
     matches.count(identity)
   }
 
-//  trait F[A] {
-//    def flatMap[B](f: A => F[B]): F[B] = ??? Monad
-//
-//    def map[B](f: A => B): F[B] = ??? Functor
-//
-//
-//  }
-
 }
 

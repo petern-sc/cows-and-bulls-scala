@@ -5,13 +5,18 @@ import scala.io.StdIn
 object Main {
   def main(args: Array[String]): Unit = {
     val secret = SecretGenerator()
-//    val guess = Guess("3456")
-    val guess = Guess(StdIn.readLine("Enter your digit guess"))
+    println("Secret: "+ secret)
+    println("Enter your digit guess")
 
-    println(secret)
-    val output = Matcher(secret = secret, guess = guess)
-    println(output)
+    def readGuess(): String = StdIn.readLine("Guess: ")
 
+    val result = Program(secret = secret, guessFunction = readGuess)
+
+    val interpreter = Interpreter()
+
+    result.foreach(interpreter.interpret)
+
+    println("Good job")
   }
 
 }
